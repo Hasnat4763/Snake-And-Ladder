@@ -10,7 +10,8 @@ config_version=5
 
 [application]
 
-config/name="WakatimePlugin"
+config/name="Snake and Ladder"
+run/main_scene="uid://ba0i6aolak7sl"
 config/features=PackedStringArray("4.5", "Mobile")
 config/icon="res://icon.svg"
 
@@ -31,5 +32,5 @@ enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
 
 [rendering]
 
-renderer/rendering_method="mobile"
+renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
