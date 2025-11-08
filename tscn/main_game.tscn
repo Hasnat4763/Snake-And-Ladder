@@ -1,7 +1,8 @@
-[gd_scene load_steps=57 format=3 uid="uid://ba0i6aolak7sl"]
+[gd_scene load_steps=59 format=3 uid="uid://ba0i6aolak7sl"]
 
 [ext_resource type="Texture2D" uid="uid://c33vak174b6nu" path="res://sprite/ladder.png" id="1_1oj5k"]
 [ext_resource type="Script" uid="uid://ba70f0g66ue2a" path="res://scripts/main_game.gd" id="1_385x7"]
+[ext_resource type="Texture2D" uid="uid://dtasksobw2o1" path="res://sprite/background.png" id="2_n3upd"]
 [ext_resource type="Texture2D" uid="uid://c5otm7revaaee" path="res://sprite/DiceBase.png" id="2_yx7mw"]
 [ext_resource type="Texture2D" uid="uid://bqsiwmqrdftyw" path="res://sprite/yellow.png" id="3_eq12k"]
 [ext_resource type="Texture2D" uid="uid://cyuvuqd1am10d" path="res://sprite/green.png" id="4_u4t67"]
@@ -53,11 +54,12 @@
 [ext_resource type="Texture2D" uid="uid://cp5mlp24s2i54" path="res://sprite/dice_face/4.png" id="50_n3upd"]
 [ext_resource type="Texture2D" uid="uid://b1bqom8i7ewxq" path="res://sprite/dice_face/5.png" id="51_h0mvv"]
 [ext_resource type="Texture2D" uid="uid://cut84lcuu7si8" path="res://sprite/dice_face/6.png" id="52_sls3e"]
+[ext_resource type="PackedScene" uid="uid://b6dq1va2osut" path="res://tscn/start_screen.tscn" id="54_hvfsc"]
 
 [sub_resource type="Curve2D" id="Curve2D_yx7mw"]
 bake_interval = 1.0
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 36.704212, 890.66, 0, 0, 0, 0, 87.94692, 890.66, 0, 0, 0, 0, 139.18962, 889.5425, 0, 0, 0, 0, 191.31583, 890.66, 0, 0, 0, 0, 239.02455, 889.5425, 0, 0, 0, 0, 289.3838, 889.5425, 0, 0, 0, 0, 339.743, 889.5425, 0, 0, 0, 0, 390.1022, 889.5425, 0, 0, 0, 0, 438.69443, 890.66, 0, 0, 0, 0, 497.0051, 889.5425, 0, 0, 0, 0, 496.1216, 797.9075, 0, 0, 0, 0, 439.57794, 799.02496, 0, 0, 0, 0, 387.45172, 799.02496, 0, 0, 0, 0, 337.33975, 799.02496, 0, 0, 0, 0, 289.3838, 799.02496, 0, 0, 0, 0, 238.14105, 800.14246, 0, 0, 0, 0, 190.43233, 800.14246, 0, 0, 0, 0, 139.18962, 800.14246, 0, 0, 0, 0, 87.94692, 801.25995, 0, 0, 0, 0, 37.587708, 801.25995, 0, 0, 0, 0, 36.704212, 707.38995, 0, 0, 0, 0, 87.94692, 705.15497, 0, 0, 0, 0, 137.42264, 705.15497, 0, 0, 0, 0, 187.78185, 704.0375, 0, 0, 0, 0, 239.2718, 704.0375, 0, 0, 0, 0, 290.26727, 704.0375, 0, 0, 0, 0, 338.8595, 705.15497, 0, 0, 0, 0, 390.1022, 707.38995, 0, 0, 0, 0, 438.69443, 709.62494, 0, 0, 0, 0, 495.2381, 708.50745, 0, 0, 0, 0, 495.2381, 620.225, 0, 0, 0, 0, 438.94168, 621.34247, 0, 0, 0, 0, 393.88342, 621.34247, 0, 0, 0, 0, 338.8595, 621.34247, 0, 0, 0, 0, 289.3838, 621.34247, 0, 0, 0, 0, 239.02455, 621.34247, 0, 0, 0, 0, 188.0291, 620.225, 0, 0, 0, 0, 136.78639, 620.225, 0, 0, 0, 0, 89.71391, 621.34247, 0, 0, 0, 0, 36.704212, 621.34247, 0, 0, 0, 0, 36.704212, 538.64746, 0, 0, 0, 0, 89.96115, 539.76495, 0, 0, 0, 0, 139.18962, 539.76495, 0, 0, 0, 0, 186.01486, 540.8825, 0, 0, 0, 0, 237.25757, 540.8825, 0, 0, 0, 0, 287.6168, 542, 0, 0, 0, 0, 337.976, 542, 0, 0, 0, 0, 388.3352, 543.1175, 0, 0, 0, 0, 440.46143, 544.235, 0, 0, 0, 0, 496.1216, 545.3525, 0, 0, 0, 0, 496.1216, 454.83496, 0, 0, 0, 0, 439.57794, 454.83496, 0, 0, 0, 0, 387.45172, 454.83496, 0, 0, 0, 0, 338.8595, 454.83496, 0, 0, 0, 0, 287.6168, 454.83496, 0, 0, 0, 0, 239.02455, 455.95245, 0, 0, 0, 0, 190.43233, 457.06995, 0, 0, 0, 0, 140.07312, 459.30496, 0, 0, 0, 0, 87.94692, 459.30496, 0, 0, 0, 0, 37.587708, 460.42245, 0, 0, 0, 0, 36.704212, 358.72995, 0, 0, 0, 0, 87.06342, 360.96497, 0, 0, 0, 0, 140.32036, 360.96497, 0, 0, 0, 0, 188.66534, 362.08246, 0, 0, 0, 0, 238.14105, 363.19995, 0, 0, 0, 0, 288.50027, 364.31744, 0, 0, 0, 0, 339.743, 364.31744, 0, 0, 0, 0, 389.21872, 365.43497, 0, 0, 0, 0, 443.1119, 366.55246, 0, 0, 0, 0, 496.1216, 366.55246, 0, 0, 0, 0, 495.2381, 282.73996, 0, 0, 0, 0, 439.57794, 282.73996, 0, 0, 0, 0, 388.3352, 282.73996, 0, 0, 0, 0, 337.976, 283.85745, 0, 0, 0, 0, 287.6168, 283.85745, 0, 0, 0, 0, 236.37407, 284.97495, 0, 0, 0, 0, 187.78185, 284.97495, 0, 0, 0, 0, 139.18962, 287.20996, 0, 0, 0, 0, 87.94692, 287.20996, 0, 0, 0, 0, 37.587708, 287.20996, 0, 0, 0, 0, 36.067963, 200.04497, 0, 0, 0, 0, 87.94692, 201.16248, 0, 0, 0, 0, 138.30612, 202.27998, 0, 0, 0, 0, 189.54883, 203.39748, 0, 0, 0, 0, 238.14105, 203.39748, 0, 0, 0, 0, 287.6168, 203.39748, 0, 0, 0, 0, 338.8595, 204.51497, 0, 0, 0, 0, 389.21872, 204.51497, 0, 0, 0, 0, 438.69443, 204.51497, 0, 0, 0, 0, 497.0051, 204.51497, 0, 0, 0, 0, 497.0051, 109.52748, 0, 0, 0, 0, 438.0582, 108.40997, 0, 0, 0, 0, 389.46597, 107.29248, 0, 0, 0, 0, 336.45627, 107.29248, 0, 0, 0, 0, 293.165, 108.40997, 0, 0, 0, 0, 238.3883, 107.29248, 0, 0, 0, 0, 190.67958, 108.40997, 0, 0, 0, 0, 137.66988, 107.29248, 0, 0, 0, 0, 82.009705, 107.29248, 0, 0, 0, 0, 35.820717, 107.29248)
+"points": PackedVector2Array(0, 0, 0, 0, 36.704212, 890.66, 0, 0, 0, 0, 87.94692, 890.66, 0, 0, 0, 0, 139.18962, 889.5425, 0, 0, 0, 0, 191.31583, 890.66, 0, 0, 0, 0, 239.02455, 889.5425, 0, 0, 0, 0, 289.3838, 889.5425, 0, 0, 0, 0, 339.743, 889.5425, 0, 0, 0, 0, 390.1022, 889.5425, 0, 0, 0, 0, 438.69443, 890.66, 0, 0, 0, 0, 497.0051, 889.5425, 0, 0, 0, 0, 496.1216, 797.9075, 0, 0, 0, 0, 439.57794, 799.02496, 0, 0, 0, 0, 387.45172, 799.02496, 0, 0, 0, 0, 337.33975, 799.02496, 0, 0, 0, 0, 289.3838, 799.02496, 0, 0, 0, 0, 238.14105, 800.14246, 0, 0, 0, 0, 190.43233, 800.14246, 0, 0, 0, 0, 139.18962, 800.14246, 0, 0, 0, 0, 87.94692, 801.25995, 0, 0, 0, 0, 37.587708, 801.25995, 0, 0, 0, 0, 35.820717, 719.6825, 0, 0, 0, 0, 88.830414, 723.035, 0, 0, 0, 0, 140.07312, 723.035, 0, 0, 0, 0, 188.66534, 723.035, 0, 0, 0, 0, 239.02455, 723.035, 0, 0, 0, 0, 291.1508, 723.035, 0, 0, 0, 0, 338.8595, 724.15247, 0, 0, 0, 0, 390.98572, 725.26996, 0, 0, 0, 0, 439.57794, 726.38745, 0, 0, 0, 0, 493.47113, 726.38745, 0, 0, 0, 0, 491.70413, 636.9875, 0, 0, 0, 0, 438.69443, 641.45746, 0, 0, 0, 0, 390.98572, 640.33997, 0, 0, 0, 0, 337.976, 639.2225, 0, 0, 0, 0, 289.3838, 640.33997, 0, 0, 0, 0, 239.02455, 640.33997, 0, 0, 0, 0, 189.54883, 639.2225, 0, 0, 0, 0, 138.30612, 638.105, 0, 0, 0, 0, 88.830414, 638.105, 0, 0, 0, 0, 35.820717, 638.105, 0, 0, 0, 0, 36.704212, 538.64746, 0, 0, 0, 0, 89.96115, 539.76495, 0, 0, 0, 0, 139.18962, 539.76495, 0, 0, 0, 0, 186.01486, 540.8825, 0, 0, 0, 0, 237.25757, 540.8825, 0, 0, 0, 0, 287.6168, 542, 0, 0, 0, 0, 337.976, 542, 0, 0, 0, 0, 388.3352, 543.1175, 0, 0, 0, 0, 440.46143, 544.235, 0, 0, 0, 0, 496.1216, 545.3525, 0, 0, 0, 0, 492.58762, 463.77493, 0, 0, 0, 0, 439.57794, 463.77493, 0, 0, 0, 0, 388.3352, 463.77493, 0, 0, 0, 0, 337.976, 463.77493, 0, 0, 0, 0, 286.7333, 462.65744, 0, 0, 0, 0, 239.90805, 463.77493, 0, 0, 0, 0, 190.43233, 464.89243, 0, 0, 0, 0, 139.18962, 464.89243, 0, 0, 0, 0, 87.94692, 466.00998, 0, 0, 0, 0, 37.587708, 464.89243, 0, 0, 0, 0, 37.587708, 382.19745, 0, 0, 0, 0, 88.830414, 382.19745, 0, 0, 0, 0, 138.30612, 382.19745, 0, 0, 0, 0, 187.78185, 381.07996, 0, 0, 0, 0, 238.14105, 381.07996, 0, 0, 0, 0, 287.6168, 381.07996, 0, 0, 0, 0, 337.976, 379.96246, 0, 0, 0, 0, 390.1022, 379.96246, 0, 0, 0, 0, 443.1119, 378.84494, 0, 0, 0, 0, 494.3546, 378.84494, 0, 0, 0, 0, 494.3546, 296.14996, 0, 0, 0, 0, 439.57794, 296.14996, 0, 0, 0, 0, 388.3352, 296.14996, 0, 0, 0, 0, 339.743, 295.03247, 0, 0, 0, 0, 289.3838, 293.91495, 0, 0, 0, 0, 237.25757, 293.91495, 0, 0, 0, 0, 188.66534, 293.91495, 0, 0, 0, 0, 140.95662, 293.91495, 0, 0, 0, 0, 87.94692, 293.91495, 0, 0, 0, 0, 37.587708, 293.91495, 0, 0, 0, 0, 35.820717, 213.45497, 0, 0, 0, 0, 88.830414, 214.57246, 0, 0, 0, 0, 137.42264, 214.57246, 0, 0, 0, 0, 189.54883, 214.57246, 0, 0, 0, 0, 238.14105, 214.57246, 0, 0, 0, 0, 288.50027, 214.57246, 0, 0, 0, 0, 340.6265, 214.57246, 0, 0, 0, 0, 389.21872, 214.57246, 0, 0, 0, 0, 440.46143, 213.45497, 0, 0, 0, 0, 495.2381, 212.33748, 0, 0, 0, 0, 497.8886, 125.172485, 0, 0, 0, 0, 439.57794, 125.172485, 0, 0, 0, 0, 390.98572, 125.172485, 0, 0, 0, 0, 339.743, 125.172485, 0, 0, 0, 0, 289.3838, 125.172485, 0, 0, 0, 0, 239.90805, 125.172485, 0, 0, 0, 0, 186.89835, 125.172485, 0, 0, 0, 0, 137.42264, 125.172485, 0, 0, 0, 0, 91.4809, 125.172485, 0, 0, 0, 0, 35.820717, 125.172485)
 }
 point_count = 100
 
@@ -219,97 +221,101 @@ animations = [{
 script = ExtResource("1_385x7")
 
 [node name="Background" type="Sprite2D" parent="."]
-position = Vector2(286, 494)
+position = Vector2(300, 510)
+texture = ExtResource("2_n3upd")
+
+[node name="Playing_Board" type="Sprite2D" parent="."]
+position = Vector2(300.27985, 494.25)
 scale = Vector2(1.0009785, 1)
 texture = ExtResource("1_1oj5k")
 
-[node name="Dice_Base_Yellow" type="Sprite2D" parent="."]
-position = Vector2(91.00001, 937.00006)
-scale = Vector2(0.27355623, 0.26584023)
+[node name="Dice_Base_Yellow" type="Sprite2D" parent="Playing_Board"]
+position = Vector2(-194.80939, 443.00006)
+scale = Vector2(0.27328882, 0.26584023)
 texture = ExtResource("2_yx7mw")
 
-[node name="Yellow_Player" type="Sprite2D" parent="Dice_Base_Yellow"]
+[node name="Yellow_Player" type="Sprite2D" parent="Playing_Board/Dice_Base_Yellow"]
 position = Vector2(-215.6778, -0.0002708435)
 scale = Vector2(0.56290764, 0.44345674)
 texture = ExtResource("3_eq12k")
 
-[node name="Dice_Base_Green" type="Sprite2D" parent="."]
-position = Vector2(483, 937.00006)
-scale = Vector2(0.27355623, 0.26584023)
+[node name="Dice_Base_Green" type="Sprite2D" parent="Playing_Board"]
+position = Vector2(196.80743, 443.00006)
+scale = Vector2(0.27328882, 0.26584023)
 texture = ExtResource("2_yx7mw")
 flip_h = true
 
-[node name="Green_Player" type="Sprite2D" parent="Dice_Base_Green"]
+[node name="Green_Player" type="Sprite2D" parent="Playing_Board/Dice_Base_Green"]
 position = Vector2(212.02231, 0.7247653)
 scale = Vector2(0.51375383, 0.42632946)
 texture = ExtResource("4_u4t67")
 
-[node name="Dice_Base_Red" type="Sprite2D" parent="."]
-position = Vector2(482.00006, 52.000004)
-scale = Vector2(0.27355623, 0.26584023)
+[node name="Dice_Base_Red" type="Sprite2D" parent="Playing_Board"]
+position = Vector2(195.80847, -442)
+scale = Vector2(0.27328882, 0.26584023)
 texture = ExtResource("2_yx7mw")
 flip_h = true
 
-[node name="Red_Player" type="Sprite2D" parent="Dice_Base_Red"]
+[node name="Red_Player" type="Sprite2D" parent="Playing_Board/Dice_Base_Red"]
 position = Vector2(212.02211, -1.1920929e-05)
 scale = Vector2(0.510071, 0.4426591)
 texture = ExtResource("6_kgivx")
 
-[node name="Dice_Base_Blue" type="Sprite2D" parent="."]
-position = Vector2(90, 51)
-scale = Vector2(0.27355623, 0.26584023)
+[node name="Dice_Base_Blue" type="Sprite2D" parent="Playing_Board"]
+position = Vector2(-195.80841, -443)
+scale = Vector2(0.27328882, 0.26584023)
 texture = ExtResource("2_yx7mw")
 
-[node name="Blue_Player" type="Sprite2D" parent="Dice_Base_Blue"]
+[node name="Blue_Player" type="Sprite2D" parent="Playing_Board/Dice_Base_Blue"]
 position = Vector2(-215.67781, 3.8146973e-06)
 scale = Vector2(0.46832585, 0.43666995)
 texture = ExtResource("5_t6c1r")
 
 [node name="Path" type="Path2D" parent="."]
 z_index = 1
-position = Vector2(-11.544336, 48.98883)
+position = Vector2(2.735508, 49.238834)
 scale = Vector2(1.1318682, 0.8948546)
 curve = SubResource("Curve2D_yx7mw")
 
 [node name="Blue_Player" type="Sprite2D" parent="Path"]
-position = Vector2(201.91779, 991.235)
+position = Vector2(246.09256, 989.00006)
 rotation = 0.022993304
 scale = Vector2(0.107750595, 0.10133631)
 texture = ExtResource("5_t6c1r")
 
 [node name="Red_Player" type="Sprite2D" parent="Path"]
-position = Vector2(246.97607, 992.3524)
+position = Vector2(291.8759, 989.2828)
 rotation = 0.022993304
 scale = Vector2(0.107750595, 0.10133631)
 texture = ExtResource("6_kgivx")
 
 [node name="Green_Player" type="Sprite2D" parent="Path"]
-position = Vector2(287.6168, 991.23486)
+position = Vector2(332.5166, 988.1652)
 rotation = 0.022993302
 scale = Vector2(0.107750595, 0.10133632)
 texture = ExtResource("4_u4t67")
 
 [node name="Yellow_Player" type="Sprite2D" parent="Path"]
-position = Vector2(333.55856, 991.235)
+position = Vector2(201.0343, 990.1173)
 rotation = 0.022993308
 scale = Vector2(0.10385426, 0.1028429)
 texture = ExtResource("3_eq12k")
 
 [node name="Dice_Animation" type="AnimatedSprite2D" parent="."]
 top_level = true
-position = Vector2(122.00001, 939)
+position = Vector2(136.27985, 939.25)
 scale = Vector2(0.124489725, 0.121759236)
 sprite_frames = SubResource("SpriteFrames_1jxto")
 animation = &"dice_draw"
 autoplay = "dice_draw"
 
 [node name="Dice_Drawed" type="AnimatedSprite2D" parent="."]
-position = Vector2(121.00003, 940)
+position = Vector2(135.27988, 940.25)
 scale = Vector2(0.1788618, 0.17407405)
 sprite_frames = SubResource("SpriteFrames_lx2ww")
 animation = &"dice_face"
 
-[node name="Button" type="Button" parent="Dice_Drawed"]
+[node name="Dice_Drawed" type="Button" parent="Dice_Drawed"]
 offset_left = -178.90918
 offset_top = -178.08545
 offset_right = 178.90894
@@ -318,5 +324,7 @@ action_mode = 0
 flat = true
 metadata/_edit_use_anchors_ = true
 
+[node name="StartScreen" parent="." instance=ExtResource("54_hvfsc")]
+
 [connection signal="animation_finished" from="Dice_Animation" to="." method="_on_dice_animation_finished"]
-[connection signal="pressed" from="Dice_Drawed/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Dice_Drawed/Dice_Drawed" to="." method="_on_dice_drawed_pressed"]
