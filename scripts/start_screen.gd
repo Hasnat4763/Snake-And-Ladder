@@ -5,6 +5,7 @@ signal oneplayer
 signal twoplayer
 signal threeplayer
 signal fourplayer
+signal change_map
 
 func _on_start_button_pressed():
 	start.emit()
@@ -33,3 +34,8 @@ func _on_four_player_toggled(toggled_on: bool) -> void:
 		fourplayer.emit()
 	else:
 		return
+
+
+func _on_change_map_toggled(toggled_on: bool) -> void:
+	if toggled_on:
+		change_map.emit()

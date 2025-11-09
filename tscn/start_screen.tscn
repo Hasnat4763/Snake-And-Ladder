@@ -32,39 +32,43 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="OnePlayer" type="CheckButton" parent="."]
-offset_left = 120.0
-offset_top = 724.0
-offset_right = 271.0
-offset_bottom = 782.0
-theme_override_font_sizes/font_size = 16
+offset_left = 15.0
+offset_top = 833.0
+offset_right = 232.0
+offset_bottom = 891.0
+theme_override_colors/font_color = Color(5.0055983e-06, 0.6870465, 0.9389947, 1)
+theme_override_font_sizes/font_size = 32
 text = "One Player"
 flat = true
 
 [node name="TwoPlayer" type="CheckButton" parent="."]
-offset_left = 332.0
-offset_top = 725.0
-offset_right = 473.0
-offset_bottom = 778.0
-theme_override_font_sizes/font_size = 16
+offset_left = 351.0
+offset_top = 836.0
+offset_right = 583.0
+offset_bottom = 889.0
+theme_override_colors/font_color = Color(5.0055983e-06, 0.6870465, 0.9389947, 1)
+theme_override_font_sizes/font_size = 32
 text = "Two Players
 "
 flat = true
 
 [node name="ThreePlayer" type="CheckButton" parent="."]
-offset_left = 118.0
-offset_top = 789.0
+offset_left = 14.0
+offset_top = 889.0
 offset_right = 271.0
-offset_bottom = 842.0
-theme_override_font_sizes/font_size = 16
+offset_bottom = 942.0
+theme_override_colors/font_color = Color(5.0055983e-06, 0.6870465, 0.9389947, 1)
+theme_override_font_sizes/font_size = 32
 text = "Three Players"
 flat = true
 
 [node name="FourPlayer" type="CheckButton" parent="."]
-offset_left = 329.0
-offset_top = 789.0
-offset_right = 473.0
-offset_bottom = 842.0
-theme_override_font_sizes/font_size = 16
+offset_left = 349.0
+offset_top = 891.0
+offset_right = 588.0
+offset_bottom = 944.0
+theme_override_colors/font_color = Color(5.0055983e-06, 0.6870465, 0.9389947, 1)
+theme_override_font_sizes/font_size = 32
 text = "Four Players"
 flat = true
 
@@ -79,8 +83,19 @@ text = "Last Winner"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Change_Map" type="CheckButton" parent="."]
+offset_left = 173.0
+offset_top = 685.0
+offset_right = 417.0
+offset_bottom = 788.0
+theme_override_colors/font_color = Color(0.4636544, 0.96407527, 1, 1)
+theme_override_font_sizes/font_size = 32
+text = "Change Map"
+autowrap_mode = 3
+
 [connection signal="pressed" from="Start_Button" to="." method="_on_start_button_pressed"]
 [connection signal="toggled" from="OnePlayer" to="." method="_on_one_player_toggled"]
 [connection signal="toggled" from="TwoPlayer" to="." method="_on_two_player_toggled"]
 [connection signal="toggled" from="ThreePlayer" to="." method="_on_three_player_toggled"]
 [connection signal="toggled" from="FourPlayer" to="." method="_on_four_player_toggled"]
+[connection signal="toggled" from="Change_Map" to="." method="_on_change_map_toggled"]

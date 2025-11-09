@@ -7,7 +7,7 @@ var Dice_Face = 0
 var PlayerPosition : Array = [0, 0, 0, 0]
 var Player_Path : Array = []
 var is_running : bool = false
-var one_or_two_map : bool = false
+var one_or_two_map : bool = true
 var Last_Won : String
 var time_running : float = 0
 var last_updated = 0
@@ -80,7 +80,9 @@ func _ready() -> void:
 	$StartScreen.twoplayer.connect(two_player)
 	$StartScreen.threeplayer.connect(three_player)
 	$StartScreen.fourplayer.connect(four_player)
+	$StartScreen.change_map.connect(change_map)
 	$endScreen.startScreen.connect(go_back_to_startScreen)
+	
 	$Dice_Animation.hide()
 	$Dice_Drawed.hide()
 	$StartScreen/last_winner.text = str(Last_Won) + " won last time"
@@ -94,16 +96,21 @@ func _ready() -> void:
 		$twoboard/Path.hide()
 		$twoboard/Playing_Board.hide()
 		$oneboard.hide()
-		Player_Path = [$twoboard/Path/Yellow_Player, $twoboard/Path/Blue_Player, $oneboard/Path/Red_Player, $twoboard/Path/Green_Player]
+		Player_Path = [$twoboard/Path/Yellow_Player, $twoboard/Path/Blue_Player, $twoboard/Path/Red_Player, $twoboard/Path/Green_Player]
 	$endScreen.hide()
+
+func change_map():
+	one_or_two_map = false
 
 func start_game() -> void:
 	is_running = true
 	$Dice_Drawed.show()
 	if one_or_two_map:
+		$oneboard.show()
 		$oneboard/Path.show()
 		$oneboard/Playing_Board.show()
 	else:
+		$twoboard.show()
 		$twoboard/Path.show()
 		$twoboard/Playing_Board.show()
 	$StartScreen.hide()
