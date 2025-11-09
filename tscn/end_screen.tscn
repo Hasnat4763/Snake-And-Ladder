@@ -1,0 +1,48 @@
+[gd_scene load_steps=3 format=3 uid="uid://bl1lurr00g44x"]
+
+[ext_resource type="Script" uid="uid://bnpe8n06s5qyu" path="res://scripts/end_screen.gd" id="1_peukf"]
+[ext_resource type="Texture2D" uid="uid://cy6dn1tuu7m2x" path="res://sprite/t20nfsv8guwe1.jpeg" id="2_fsigy"]
+
+[node name="endScreen" type="Node2D"]
+script = ExtResource("1_peukf")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(299.99997, 509.99997)
+scale = Vector2(1.1999999, 2.04)
+texture = ExtResource("2_fsigy")
+
+[node name="player" type="Label" parent="."]
+offset_top = 244.0
+offset_right = 599.0
+offset_bottom = 334.0
+theme_override_colors/font_color = Color(3.946722e-06, 0.64339536, 0.7975309, 1)
+theme_override_font_sizes/font_size = 58
+text = "Player"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="end" type="Label" parent="."]
+offset_top = 242.0
+offset_right = 600.0
+offset_bottom = 485.0
+theme_override_colors/font_color = Color(1.6364455e-06, 0.76354706, 0.74707514, 1)
+theme_override_font_sizes/font_size = 58
+text = "
+Won The Match
+ 🥀🥀🥀🥀🥀🥀🥀"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="goback" type="Button" parent="."]
+offset_left = 89.0
+offset_top = 511.0
+offset_right = 521.0
+offset_bottom = 660.0
+theme_override_colors/font_color = Color(0.20275664, 0.4836144, 1, 1)
+theme_override_colors/font_hover_color = Color(0.6135316, 0.42667782, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 50
+text = "Go to StartScreen"
+flat = true
+
+[connection signal="pressed" from="goback" to="." method="_on_goback_pressed"]

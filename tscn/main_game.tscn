@@ -1,10 +1,11 @@
-[gd_scene load_steps=59 format=3 uid="uid://ba0i6aolak7sl"]
+[gd_scene load_steps=64 format=3 uid="uid://ba0i6aolak7sl"]
 
 [ext_resource type="Texture2D" uid="uid://c33vak174b6nu" path="res://sprite/ladder.png" id="1_1oj5k"]
 [ext_resource type="Script" uid="uid://ba70f0g66ue2a" path="res://scripts/main_game.gd" id="1_385x7"]
 [ext_resource type="Texture2D" uid="uid://dtasksobw2o1" path="res://sprite/background.png" id="2_n3upd"]
 [ext_resource type="Texture2D" uid="uid://c5otm7revaaee" path="res://sprite/DiceBase.png" id="2_yx7mw"]
 [ext_resource type="Texture2D" uid="uid://bqsiwmqrdftyw" path="res://sprite/yellow.png" id="3_eq12k"]
+[ext_resource type="Texture2D" uid="uid://c0jyhxo0jgqr0" path="res://sprite/Board_2.png" id="3_kmnmp"]
 [ext_resource type="Texture2D" uid="uid://cyuvuqd1am10d" path="res://sprite/green.png" id="4_u4t67"]
 [ext_resource type="Texture2D" uid="uid://dirfrjodgnde4" path="res://sprite/blue.png" id="5_t6c1r"]
 [ext_resource type="Texture2D" uid="uid://cxt4xt24kysv1" path="res://sprite/red.png" id="6_kgivx"]
@@ -55,6 +56,15 @@
 [ext_resource type="Texture2D" uid="uid://b1bqom8i7ewxq" path="res://sprite/dice_face/5.png" id="51_h0mvv"]
 [ext_resource type="Texture2D" uid="uid://cut84lcuu7si8" path="res://sprite/dice_face/6.png" id="52_sls3e"]
 [ext_resource type="PackedScene" uid="uid://b6dq1va2osut" path="res://tscn/start_screen.tscn" id="54_hvfsc"]
+[ext_resource type="PackedScene" uid="uid://bl1lurr00g44x" path="res://tscn/end_screen.tscn" id="56_h0mvv"]
+[ext_resource type="AudioStream" uid="uid://dh3yt2818tehl" path="res://sounds/dice.ogg" id="57_lx2ww"]
+[ext_resource type="AudioStream" uid="uid://cs02rfav2e60i" path="res://sounds/snake.ogg" id="58_kmnmp"]
+
+[sub_resource type="Curve2D" id="Curve2D_31efi"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 46.179443, 894.574, 0, 0, 0, 0, 95.383385, 894.574, 0, 0, 0, 0, 145.45053, 895.8786, 0, 0, 0, 0, 192.06479, 894.574, 0, 0, 0, 0, 245.58485, 895.8786, 0, 0, 0, 0, 290.47266, 895.8786, 0, 0, 0, 0, 339.6766, 894.574, 0, 0, 0, 0, 391.4702, 897.1832, 0, 0, 0, 0, 439.8109, 894.574, 0, 0, 0, 0, 490.7413, 894.574, 0, 0, 0, 0, 490.7413, 822.8197, 0, 0, 0, 0, 440.67413, 824.1243, 0, 0, 0, 0, 391.4702, 824.1243, 0, 0, 0, 0, 343.12952, 825.42896, 0, 0, 0, 0, 293.06235, 825.42896, 0, 0, 0, 0, 245.58485, 822.8197, 0, 0, 0, 0, 192.06479, 824.1243, 0, 0, 0, 0, 143.72408, 822.8197, 0, 0, 0, 0, 97.10983, 824.1243, 0, 0, 0, 0, 47.9059, 824.1243, 0, 0, 0, 0, 47.9059, 735.41, 0, 0, 0, 0, 97.10983, 738.01917, 0, 0, 0, 0, 147.17699, 735.41, 0, 0, 0, 0, 197.24414, 738.01917, 0, 0, 0, 0, 249.03777, 735.41, 0, 0, 0, 0, 293.06235, 738.01917, 0, 0, 0, 0, 343.99274, 738.01917, 0, 0, 0, 0, 393.19666, 738.01917, 0, 0, 0, 0, 440.67413, 740.6284, 0, 0, 0, 0, 492.46774, 739.3238, 0, 0, 0, 0, 490.7413, 664.9603, 0, 0, 0, 0, 441.53738, 672.788, 0, 0, 0, 0, 394.92313, 670.1788, 0, 0, 0, 0, 344.85596, 672.788, 0, 0, 0, 0, 295.65204, 671.4834, 0, 0, 0, 0, 249.90099, 671.4834, 0, 0, 0, 0, 195.51768, 668.87415, 0, 0, 0, 0, 148.90344, 670.1788, 0, 0, 0, 0, 98.83629, 670.1788, 0, 0, 0, 0, 47.9059, 668.87415, 0, 0, 0, 0, 47.04267, 593.20605, 0, 0, 0, 0, 97.10983, 594.5107, 0, 0, 0, 0, 143.72408, 593.20605, 0, 0, 0, 0, 195.51768, 595.81525, 0, 0, 0, 0, 243.8584, 594.5107, 0, 0, 0, 0, 293.06235, 593.20605, 0, 0, 0, 0, 339.6766, 593.20605, 0, 0, 0, 0, 391.4702, 594.5107, 0, 0, 0, 0, 438.9477, 594.5107, 0, 0, 0, 0, 491.60452, 594.5107, 0, 0, 0, 0, 491.60452, 521.4518, 0, 0, 0, 0, 442.4006, 521.4518, 0, 0, 0, 0, 392.33344, 522.7564, 0, 0, 0, 0, 343.12952, 522.7564, 0, 0, 0, 0, 295.65204, 522.7564, 0, 0, 0, 0, 244.72162, 522.7564, 0, 0, 0, 0, 195.51768, 524.061, 0, 0, 0, 0, 143.72408, 524.061, 0, 0, 0, 0, 96.246605, 524.061, 0, 0, 0, 0, 47.9059, 524.061, 0, 0, 0, 0, 45.31622, 443.17438, 0, 0, 0, 0, 98.83629, 444.479, 0, 0, 0, 0, 143.72408, 444.479, 0, 0, 0, 0, 194.65446, 447.08826, 0, 0, 0, 0, 242.13194, 443.17438, 0, 0, 0, 0, 293.92557, 444.479, 0, 0, 0, 0, 341.40305, 443.17438, 0, 0, 0, 0, 393.19666, 444.479, 0, 0, 0, 0, 438.08447, 445.78363, 0, 0, 0, 0, 491.60452, 444.479, 0, 0, 0, 0, 492.46774, 371.4201, 0, 0, 0, 0, 442.4006, 371.4201, 0, 0, 0, 0, 395.78635, 371.4201, 0, 0, 0, 0, 344.85596, 372.72473, 0, 0, 0, 0, 295.65204, 372.72473, 0, 0, 0, 0, 242.99518, 371.4201, 0, 0, 0, 0, 194.65446, 370.11548, 0, 0, 0, 0, 147.17699, 368.81085, 0, 0, 0, 0, 97.97306, 366.2016, 0, 0, 0, 0, 46.179443, 366.2016, 0, 0, 0, 0, 46.179443, 297.05658, 0, 0, 0, 0, 97.97306, 297.05658, 0, 0, 0, 0, 146.31377, 298.3612, 0, 0, 0, 0, 192.92801, 298.3612, 0, 0, 0, 0, 241.26872, 298.3612, 0, 0, 0, 0, 293.06235, 299.66583, 0, 0, 0, 0, 341.40305, 295.75195, 0, 0, 0, 0, 389.74374, 295.75195, 0, 0, 0, 0, 442.4006, 297.05658, 0, 0, 0, 0, 492.46774, 295.75195, 0, 0, 0, 0, 490.7413, 218.7792, 0, 0, 0, 0, 438.9477, 220.0838, 0, 0, 0, 0, 389.74374, 218.7792, 0, 0, 0, 0, 342.26627, 221.38843, 0, 0, 0, 0, 294.7888, 218.7792, 0, 0, 0, 0, 244.72162, 218.7792, 0, 0, 0, 0, 194.65446, 220.0838, 0, 0, 0, 0, 144.58731, 220.0838, 0, 0, 0, 0, 97.97306, 220.0838, 0, 0, 0, 0, 47.04267, 217.47458)
+}
+point_count = 100
 
 [sub_resource type="Curve2D" id="Curve2D_yx7mw"]
 bake_interval = 1.0
@@ -66,7 +76,7 @@ point_count = 100
 [sub_resource type="SpriteFrames" id="SpriteFrames_1jxto"]
 animations = [{
 "frames": [{
-"duration": 1.0,
+"duration": 3.0,
 "texture": ExtResource("7_r2ag1")
 }, {
 "duration": 1.0,
@@ -188,7 +198,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"dice_draw",
-"speed": 15.0
+"speed": 20.0
 }]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_lx2ww"]
@@ -224,78 +234,159 @@ script = ExtResource("1_385x7")
 position = Vector2(300, 510)
 texture = ExtResource("2_n3upd")
 
-[node name="Playing_Board" type="Sprite2D" parent="."]
+[node name="twoboard" type="Node2D" parent="."]
+
+[node name="Playing_Board" type="Sprite2D" parent="twoboard"]
 position = Vector2(300.27985, 494.25)
 scale = Vector2(1.0009785, 1)
-texture = ExtResource("1_1oj5k")
+texture = ExtResource("3_kmnmp")
 
-[node name="Dice_Base_Yellow" type="Sprite2D" parent="Playing_Board"]
+[node name="Dice_Base_Yellow" type="Sprite2D" parent="twoboard/Playing_Board"]
 position = Vector2(-194.80939, 443.00006)
 scale = Vector2(0.27328882, 0.26584023)
 texture = ExtResource("2_yx7mw")
 
-[node name="Yellow_Player" type="Sprite2D" parent="Playing_Board/Dice_Base_Yellow"]
+[node name="Yellow_Player" type="Sprite2D" parent="twoboard/Playing_Board/Dice_Base_Yellow"]
 position = Vector2(-215.6778, -0.0002708435)
 scale = Vector2(0.56290764, 0.44345674)
 texture = ExtResource("3_eq12k")
 
-[node name="Dice_Base_Green" type="Sprite2D" parent="Playing_Board"]
+[node name="Dice_Base_Green" type="Sprite2D" parent="twoboard/Playing_Board"]
 position = Vector2(196.80743, 443.00006)
 scale = Vector2(0.27328882, 0.26584023)
 texture = ExtResource("2_yx7mw")
 flip_h = true
 
-[node name="Green_Player" type="Sprite2D" parent="Playing_Board/Dice_Base_Green"]
+[node name="Green_Player" type="Sprite2D" parent="twoboard/Playing_Board/Dice_Base_Green"]
 position = Vector2(212.02231, 0.7247653)
 scale = Vector2(0.51375383, 0.42632946)
 texture = ExtResource("4_u4t67")
 
-[node name="Dice_Base_Red" type="Sprite2D" parent="Playing_Board"]
+[node name="Dice_Base_Red" type="Sprite2D" parent="twoboard/Playing_Board"]
 position = Vector2(195.80847, -442)
 scale = Vector2(0.27328882, 0.26584023)
 texture = ExtResource("2_yx7mw")
 flip_h = true
 
-[node name="Red_Player" type="Sprite2D" parent="Playing_Board/Dice_Base_Red"]
+[node name="Red_Player" type="Sprite2D" parent="twoboard/Playing_Board/Dice_Base_Red"]
 position = Vector2(212.02211, -1.1920929e-05)
 scale = Vector2(0.510071, 0.4426591)
 texture = ExtResource("6_kgivx")
 
-[node name="Dice_Base_Blue" type="Sprite2D" parent="Playing_Board"]
+[node name="Dice_Base_Blue" type="Sprite2D" parent="twoboard/Playing_Board"]
 position = Vector2(-195.80841, -443)
 scale = Vector2(0.27328882, 0.26584023)
 texture = ExtResource("2_yx7mw")
 
-[node name="Blue_Player" type="Sprite2D" parent="Playing_Board/Dice_Base_Blue"]
+[node name="Blue_Player" type="Sprite2D" parent="twoboard/Playing_Board/Dice_Base_Blue"]
 position = Vector2(-215.67781, 3.8146973e-06)
 scale = Vector2(0.46832585, 0.43666995)
 texture = ExtResource("5_t6c1r")
 
-[node name="Path" type="Path2D" parent="."]
+[node name="Path" type="Path2D" parent="twoboard"]
+z_index = 1
+position = Vector2(-10.496301, 65.30469)
+scale = Vector2(1.158444, 0.76650494)
+curve = SubResource("Curve2D_31efi")
+
+[node name="Blue_Player" type="Sprite2D" parent="twoboard/Path"]
+position = Vector2(244.07835, 990.95557)
+rotation = 0.022993304
+scale = Vector2(0.107750595, 0.10133631)
+texture = ExtResource("5_t6c1r")
+
+[node name="Red_Player" type="Sprite2D" parent="twoboard/Path"]
+position = Vector2(284.7191, 990.9556)
+rotation = 0.022993304
+scale = Vector2(0.107750595, 0.10133631)
+texture = ExtResource("6_kgivx")
+
+[node name="Green_Player" type="Sprite2D" parent="twoboard/Path"]
+position = Vector2(325.35986, 992.07306)
+rotation = 0.022993302
+scale = Vector2(0.107750595, 0.10133632)
+texture = ExtResource("4_u4t67")
+
+[node name="Yellow_Player" type="Sprite2D" parent="twoboard/Path"]
+position = Vector2(201.0343, 990.1173)
+rotation = 0.022993308
+scale = Vector2(0.10385426, 0.1028429)
+texture = ExtResource("3_eq12k")
+
+[node name="oneboard" type="Node2D" parent="."]
+
+[node name="Playing_Board" type="Sprite2D" parent="oneboard"]
+position = Vector2(300.27985, 494.25)
+scale = Vector2(1.0009785, 1)
+texture = ExtResource("1_1oj5k")
+
+[node name="Dice_Base_Yellow" type="Sprite2D" parent="oneboard/Playing_Board"]
+position = Vector2(-194.80939, 443.00006)
+scale = Vector2(0.27328882, 0.26584023)
+texture = ExtResource("2_yx7mw")
+
+[node name="Yellow_Player" type="Sprite2D" parent="oneboard/Playing_Board/Dice_Base_Yellow"]
+position = Vector2(-215.6778, -0.0002708435)
+scale = Vector2(0.56290764, 0.44345674)
+texture = ExtResource("3_eq12k")
+
+[node name="Dice_Base_Green" type="Sprite2D" parent="oneboard/Playing_Board"]
+position = Vector2(196.80743, 443.00006)
+scale = Vector2(0.27328882, 0.26584023)
+texture = ExtResource("2_yx7mw")
+flip_h = true
+
+[node name="Green_Player" type="Sprite2D" parent="oneboard/Playing_Board/Dice_Base_Green"]
+position = Vector2(212.02231, 0.7247653)
+scale = Vector2(0.51375383, 0.42632946)
+texture = ExtResource("4_u4t67")
+
+[node name="Dice_Base_Red" type="Sprite2D" parent="oneboard/Playing_Board"]
+position = Vector2(195.80847, -442)
+scale = Vector2(0.27328882, 0.26584023)
+texture = ExtResource("2_yx7mw")
+flip_h = true
+
+[node name="Red_Player" type="Sprite2D" parent="oneboard/Playing_Board/Dice_Base_Red"]
+position = Vector2(212.02211, -1.1920929e-05)
+scale = Vector2(0.510071, 0.4426591)
+texture = ExtResource("6_kgivx")
+
+[node name="Dice_Base_Blue" type="Sprite2D" parent="oneboard/Playing_Board"]
+position = Vector2(-195.80841, -443)
+scale = Vector2(0.27328882, 0.26584023)
+texture = ExtResource("2_yx7mw")
+
+[node name="Blue_Player" type="Sprite2D" parent="oneboard/Playing_Board/Dice_Base_Blue"]
+position = Vector2(-215.67781, 3.8146973e-06)
+scale = Vector2(0.46832585, 0.43666995)
+texture = ExtResource("5_t6c1r")
+
+[node name="Path" type="Path2D" parent="oneboard"]
 z_index = 1
 position = Vector2(2.735508, 49.238834)
 scale = Vector2(1.1318682, 0.8948546)
 curve = SubResource("Curve2D_yx7mw")
 
-[node name="Blue_Player" type="Sprite2D" parent="Path"]
-position = Vector2(246.09256, 989.00006)
+[node name="Blue_Player" type="Sprite2D" parent="oneboard/Path"]
+position = Vector2(244.07835, 990.95557)
 rotation = 0.022993304
 scale = Vector2(0.107750595, 0.10133631)
 texture = ExtResource("5_t6c1r")
 
-[node name="Red_Player" type="Sprite2D" parent="Path"]
-position = Vector2(291.8759, 989.2828)
+[node name="Red_Player" type="Sprite2D" parent="oneboard/Path"]
+position = Vector2(284.7191, 990.9556)
 rotation = 0.022993304
 scale = Vector2(0.107750595, 0.10133631)
 texture = ExtResource("6_kgivx")
 
-[node name="Green_Player" type="Sprite2D" parent="Path"]
-position = Vector2(332.5166, 988.1652)
+[node name="Green_Player" type="Sprite2D" parent="oneboard/Path"]
+position = Vector2(325.35986, 992.07306)
 rotation = 0.022993302
 scale = Vector2(0.107750595, 0.10133632)
 texture = ExtResource("4_u4t67")
 
-[node name="Yellow_Player" type="Sprite2D" parent="Path"]
+[node name="Yellow_Player" type="Sprite2D" parent="oneboard/Path"]
 position = Vector2(201.0343, 990.1173)
 rotation = 0.022993308
 scale = Vector2(0.10385426, 0.1028429)
@@ -326,6 +417,20 @@ offset_bottom = 178.08496
 action_mode = 0
 flat = true
 metadata/_edit_use_anchors_ = true
+
+[node name="endScreen" parent="." instance=ExtResource("56_h0mvv")]
+visible = false
+
+[node name="Dice_Roll" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("57_lx2ww")
+volume_db = 24.0
+
+[node name="Snake" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("58_kmnmp")
+
+[node name="Pawn_move" type="AudioStreamPlayer2D" parent="."]
+
+[node name="Ladder" type="AudioStreamPlayer2D" parent="."]
 
 [connection signal="animation_finished" from="Dice_Animation" to="." method="_on_dice_animation_finished"]
 [connection signal="pressed" from="Dice_Drawed/Dice_Drawed" to="." method="_on_dice_drawed_pressed"]
