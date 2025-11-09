@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=3 uid="uid://ba0i6aolak7sl"]
+[gd_scene load_steps=65 format=3 uid="uid://ba0i6aolak7sl"]
 
 [ext_resource type="Texture2D" uid="uid://c33vak174b6nu" path="res://sprite/ladder.png" id="1_1oj5k"]
 [ext_resource type="Script" uid="uid://ba70f0g66ue2a" path="res://scripts/main_game.gd" id="1_385x7"]
@@ -59,6 +59,7 @@
 [ext_resource type="PackedScene" uid="uid://bl1lurr00g44x" path="res://tscn/end_screen.tscn" id="56_h0mvv"]
 [ext_resource type="AudioStream" uid="uid://dh3yt2818tehl" path="res://sounds/dice.ogg" id="57_lx2ww"]
 [ext_resource type="AudioStream" uid="uid://cs02rfav2e60i" path="res://sounds/snake.ogg" id="58_kmnmp"]
+[ext_resource type="AudioStream" uid="uid://csomsxrwkiila" path="res://sounds/genghis_khan_bg.ogg" id="60_31efi"]
 
 [sub_resource type="Curve2D" id="Curve2D_31efi"]
 _data = {
@@ -227,7 +228,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Main_Game" type="Node2D"]
+[node name="text" type="Node2D"]
 script = ExtResource("1_385x7")
 
 [node name="Background" type="Sprite2D" parent="."]
@@ -431,6 +432,20 @@ stream = ExtResource("58_kmnmp")
 [node name="Pawn_move" type="AudioStreamPlayer2D" parent="."]
 
 [node name="Ladder" type="AudioStreamPlayer2D" parent="."]
+
+[node name="BackGroundMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("60_31efi")
+autoplay = true
+parameters/looping = true
+
+[node name="Time" type="Label" parent="."]
+offset_left = 196.0
+offset_right = 405.0
+offset_bottom = 115.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Playing For"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="animation_finished" from="Dice_Animation" to="." method="_on_dice_animation_finished"]
 [connection signal="pressed" from="Dice_Drawed/Dice_Drawed" to="." method="_on_dice_drawed_pressed"]

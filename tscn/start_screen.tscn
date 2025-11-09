@@ -19,9 +19,9 @@ text = "Start"
 flat = true
 
 [node name="Start_Label" type="Label" parent="."]
-offset_top = 170.0
+offset_top = 1.0
 offset_right = 600.0
-offset_bottom = 514.0
+offset_bottom = 345.0
 theme_override_colors/font_color = Color(0.24816433, 0.5011815, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 80
@@ -36,29 +36,48 @@ offset_left = 120.0
 offset_top = 724.0
 offset_right = 271.0
 offset_bottom = 782.0
+theme_override_font_sizes/font_size = 16
 text = "One Player"
+flat = true
 
 [node name="TwoPlayer" type="CheckButton" parent="."]
 offset_left = 332.0
 offset_top = 725.0
 offset_right = 473.0
 offset_bottom = 778.0
+theme_override_font_sizes/font_size = 16
 text = "Two Players
 "
+flat = true
 
 [node name="ThreePlayer" type="CheckButton" parent="."]
 offset_left = 118.0
 offset_top = 789.0
 offset_right = 271.0
 offset_bottom = 842.0
+theme_override_font_sizes/font_size = 16
 text = "Three Players"
+flat = true
 
 [node name="FourPlayer" type="CheckButton" parent="."]
 offset_left = 329.0
 offset_top = 789.0
 offset_right = 473.0
 offset_bottom = 842.0
+theme_override_font_sizes/font_size = 16
 text = "Four Players"
+flat = true
+
+[node name="last_winner" type="Label" parent="."]
+offset_left = 2.0
+offset_top = 393.0
+offset_right = 601.0
+offset_bottom = 513.0
+theme_override_colors/font_color = Color(0.75830853, 0.5546174, 3.85046e-07, 1)
+theme_override_font_sizes/font_size = 32
+text = "Last Winner"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="Start_Button" to="." method="_on_start_button_pressed"]
 [connection signal="toggled" from="OnePlayer" to="." method="_on_one_player_toggled"]

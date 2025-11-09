@@ -4,11 +4,14 @@ var Dice_Run = 0
 var player_or_ai = [true, true, true, true]
 var turn = 0
 var Dice_Face = 0
-var PlayerPosition = [0, 0, 0, 0]
-var Player_Path = []
-var is_running = false
+var PlayerPosition : Array = [0, 0, 0, 0]
+var Player_Path : Array = []
+var is_running : bool = false
 var one_or_two_map : bool = false
 var Last_Won : String
+var time_running : float = 0
+var last_updated = 0
+var file_path = "res://save_score.data"
 
 var Players = {
 	0: "Yellow",
@@ -70,6 +73,8 @@ var one_Snake_Location = {
 }
 
 func _ready() -> void:
+	load_game()
+	$BackGroundMusic.play()
 	$StartScreen.start.connect(start_game)
 	$StartScreen.oneplayer.connect(one_player)
 	$StartScreen.twoplayer.connect(two_player)
@@ -78,6 +83,7 @@ func _ready() -> void:
 	$endScreen.startScreen.connect(go_back_to_startScreen)
 	$Dice_Animation.hide()
 	$Dice_Drawed.hide()
+	$StartScreen/last_winner.text = str(Last_Won) + " won last time"
 	
 	if one_or_two_map:
 		$oneboard/Path.hide()
@@ -269,11 +275,22 @@ func endgame():
 	return
 
 func save_game(player):
-	var file = FileAccess.open("res://save_score.data", FileAccess.WRITE)
+	var file = FileAccess.open(file_path, FileAccess.WRITE)
 	file.store_var(player)
 	file.close()
 
 func load_game():
-	var file = FileAccess.open("res://save_score.data", FileAccess.READ)
-	Last_Won = file.get_var()
-	file.close()
+	var file = FileAccess.open(file_path, FileAccess.READ)
+	if ResourceLoader.exists(file_path):
+		Last_Won = file.get_var()
+		file.close()
+	else:
+		Last_Won = "Nobody"
+		
+
+func _process(delta):
+	if is_running:
+		time_running += delta
+	if int(time_running) != last_updated:
+		last_updated = int(time_running)
+		$Time.text = "Playing for " + str(int(time_running)) + " seconds" 
