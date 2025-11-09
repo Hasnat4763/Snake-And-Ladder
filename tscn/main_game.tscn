@@ -420,7 +420,6 @@ flat = true
 metadata/_edit_use_anchors_ = true
 
 [node name="endScreen" parent="." instance=ExtResource("56_h0mvv")]
-visible = false
 
 [node name="Dice_Roll" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("57_lx2ww")
