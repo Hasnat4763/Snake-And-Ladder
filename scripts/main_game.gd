@@ -198,6 +198,8 @@ func _move_player(player_index: int, steps: int) -> void:
 	var tween = create_tween() # This animates the player movement
 
 	for i in range(steps):
+		if PlayerPosition[player_index] == 67:
+			$sixseven.play()
 		if PlayerPosition[player_index] >= 100:
 			break
 		PlayerPosition[player_index] += 1
@@ -211,26 +213,33 @@ func _move_player(player_index: int, steps: int) -> void:
 	var current = PlayerPosition[player_index]
 	
 	if one_or_two_map:
-		if current in one_Ladder_Location:
+		if current in one_Ladder_Location.keys():
+			$Ladder.play()
 			PlayerPosition[player_index] = one_Ladder_Location[current] # This Checks and sets the player location according to the ladders in the 1st board
-		elif current in one_Snake_Location:
+			
+		elif current in one_Snake_Location.keys():
+			$Snake.play()
 			PlayerPosition[player_index] = one_Snake_Location[current] # This checks and sets the player location according to the snakes in the 1st board
-			$Snake.play()
+			
 	else:
-		if current in two_Ladder_Location:
+		if current in two_Ladder_Location.keys():
+			$Ladder.play()
 			PlayerPosition[player_index] = two_Ladder_Location[current] # This sets the player location according to the ladders on the 2nd map
-		elif current in two_Snake_Location:
-			PlayerPosition[player_index] = two_Snake_Location[current] # This sets the player location according to the snakes on the 2nd map
+			
+		elif current in two_Snake_Location.keys():
 			$Snake.play()
+			PlayerPosition[player_index] = two_Snake_Location[current] # This sets the player location according to the snakes on the 2nd map
+			
+			
 	if one_or_two_map:
-		if current in one_Ladder_Location or current in one_Snake_Location:
+		if current in one_Ladder_Location.keys() or current in one_Snake_Location.keys():
 			var final_point = curve.get_point_position(PlayerPosition[player_index] - 1)
 			var offset_final = set_offset_for_pawns(final_point, player_index)
 			var jump_tween = create_tween()
 			jump_tween.tween_property(player_node, "position", offset_final, 0.5).set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_OUT)
 			await jump_tween.finished
 	else:
-		if current in two_Ladder_Location or current in two_Snake_Location:
+		if current in two_Ladder_Location.keys() or current in two_Snake_Location.keys():
 			var final_point = curve.get_point_position(PlayerPosition[player_index] - 1)
 			var offset_final = set_offset_for_pawns(final_point, player_index)
 			var jump_tween = create_tween()
@@ -280,7 +289,7 @@ func go_back_to_startScreen():
 	Dice_Run = 0
 	turn = 0
 	
-func endgame():
+func endgame(): # Ends Game Duh
 	$endScreen/player.text = Players[turn]
 	$Dice_Drawed/Dice_Drawed.show()
 	$endScreen.show()
@@ -295,8 +304,9 @@ func save_game(player):
 	var file = FileAccess.open(file_path, FileAccess.WRITE)
 	file.store_var(player)
 	file.close()
+	# Saves winner
 
-func load_game():
+func load_game(): # Loads last winner
 	var file = FileAccess.open(file_path, FileAccess.READ)
 	if ResourceLoader.exists(file_path):
 		Last_Won = file.get_var()
@@ -304,8 +314,7 @@ func load_game():
 	else:
 		Last_Won = "Nobody"
 		
-
-func _process(delta):
+func _process(delta): # Keeps track of time
 	if is_running:
 		time_running += delta
 	if int(time_running) != last_updated:
